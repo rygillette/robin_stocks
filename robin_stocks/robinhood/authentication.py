@@ -127,7 +127,7 @@ def login(username=None, password=None, expiresIn=86400, scope='internal', by_sm
                     res = request_get(
                         portfolio_profile_url(), 'regular', jsonify_data=False)
                     # Raises exception is response code is not 200.
-                    res.raise_for_status()
+                    # res.raise_for_status()
                     return({'access_token': access_token, 'token_type': token_type,
                             'expires_in': expiresIn, 'scope': scope, 'detail': 'logged in using authentication in {0}'.format(creds_file),
                             'backup_code': None, 'refresh_token': refresh_token})
